@@ -1,0 +1,19 @@
+import os
+
+env = Environment(CCFLAGS = "-std=c++11 -g",
+        CPPDEFINES=['__GXX_EXPERIMENTAL_CXX0X__'], CPPPATH = ".",)
+
+# Load environment variables
+env.Replace(**os.environ)
+
+# Source section
+common_sources = Split("""
+""")
+
+# Object section
+common_objects = env.Object(source = common_sources)
+
+# Program
+demo = env.Program(source = common_objects)
+Default(demo)
+
