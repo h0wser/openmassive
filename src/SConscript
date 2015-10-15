@@ -1,7 +1,9 @@
 import os
 
 env = Environment(CCFLAGS = "-std=c++11 -g",
-        CPPDEFINES=['__GXX_EXPERIMENTAL_CXX0X__'], CPPPATH = ".",)
+        CPPDEFINES=['__GXX_EXPERIMENTAL_CXX0X__'],
+        CPPPATH = [".", "../depend/dawn/src"],
+        LIBPATH = ["../depend/dawn/build"])
 
 # Load environment variables
 env.Replace(**os.environ)
@@ -10,12 +12,21 @@ env.Replace(**os.environ)
 common_sources = Split("""
 """)
 
+login_sources = Split("""
+login/Main.cpp
+""")
+
+
 # Object section
 common_objects = env.Object(source = common_sources)
+login_objects = env.Object(source = login_sources)
 
 # Target section
-# ...
-all_targets = []
+login_server = env.Program(
+        target = 'login-server',
+        source = login_objects,
+        LIBS = ['dawn-log'])
+all_targets = [login_server]
 
 
 # Aliases
