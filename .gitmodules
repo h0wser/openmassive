@@ -1,0 +1,3 @@
+[submodule "depend/dawn"]
+	path = depend/dawn
+	url = git@github.com:Deoxyribonucleic/dawn
