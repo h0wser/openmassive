@@ -8,6 +8,7 @@ env.Replace(**os.environ)
 
 # Source section
 common_sources = Split("""
+Main.cpp
 """)
 
 # Object section
