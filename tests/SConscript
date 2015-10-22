@@ -1,21 +1,30 @@
 import os
 
-env = Environment(CCFLAGS = "-std=c++11 -g",
-        CPPDEFINES=['__GXX_EXPERIMENTAL_CXX0X__'], CPPPATH = ".",)
+env = Environment(CCFLAGS = "-std=c++11 -g -Wall -Werror ",
+        CPPDEFINES=['__GXX_EXPERIMENTAL_CXX0X__'],
+        CPPPATH = "../../src", LIBPATH = "../../build")
+
+Import("lib_util")
 
 # Load environment variables
 env.Replace(**os.environ)
 
 # Source section
-common_sources = Split("""
+util_sources = Split("""
+util/log/LoggerTests.cpp
 """)
 
 # Object section
-common_objects = env.Object(source = common_sources)
+omtest = env.Program("omtest",
+        source = [
+            util_sources,
+            "Main.cpp"
+        ],
+        LIBS = [lib_util, "gtest"]);
 
 # Target section
 # ...
-all_targets = []
+all_targets = [omtest]
 
 
 # Aliases

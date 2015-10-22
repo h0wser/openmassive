@@ -1,6 +1,6 @@
 import os
 
-env = Environment(CCFLAGS = "-std=c++11 -g",
+env = Environment(CCFLAGS = "-std=c++11 -g -Wall -Werror",
         CPPDEFINES=['__GXX_EXPERIMENTAL_CXX0X__'],
         CPPPATH = ["."],
         LIBPATH = [])

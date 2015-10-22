@@ -24,7 +24,7 @@ namespace om
 				std::basic_string<charT> bufferString(this->str());
 
 				// print a stamp for each character following a newline
-				for(int i=0; i<bufferString.size(); ++i)
+				for(size_t i=0; i<bufferString.size(); ++i)
 				{
 					if(m_newLine)
 						printStamp();
@@ -42,9 +42,11 @@ namespace om
 
 				// reset buffer
 				this->str("");
+
+				return 0;
 			}
 
-			std::basic_ostream<charT, Traits> const& get_real_stream() const
+			std::basic_ostream<charT, Traits> const& getRealStream() const
 			{
 				return m_realStream;
 			}
@@ -69,7 +71,7 @@ namespace om
 		{
 		}
 
-		LogBuffer const& get_buffer() const
+		LogBuffer const& getBuffer() const
 		{
 			return m_buffer;
 		}
