@@ -1,5 +1,6 @@
 language: cpp
 compiler: g++
+sudo: required
 
 addons:
   apt:
@@ -10,7 +11,7 @@ addons:
     - g++-4.9
     - libgtest-dev
 
-after_install:
+install:
 - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
 - export CXX="g++-4.9"
 
