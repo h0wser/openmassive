@@ -26,9 +26,6 @@ omtest = env.Program("omtest",
 # ...
 all_targets = [omtest]
 
-
 # Aliases
-env.Alias("all", all_targets)
-
-Default(all_targets)
+env.Alias("tests", all_targets)
 
