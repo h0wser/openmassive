@@ -1,4 +1,4 @@
-# OpenMassive
+# OpenMassive [![Build Status](https://magnum.travis-ci.com/Deoxyribonucleic/openmassive.svg?token=ihnsZhoM8Qtss7yAhAhE)](https://magnum.travis-ci.com/Deoxyribonucleic/openmassive)
 
 **OpenMassive** (working title) is an application framework for massive,
 scalable applications such as MMOs.
