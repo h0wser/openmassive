@@ -20,7 +20,7 @@ omtest = env.Program("omtest",
             util_sources,
             "Main.cpp"
         ],
-        LIBS = [lib_util, "gtest"]);
+        LIBS = [lib_util, "gtest", "pthread"]);
 
 # Target section
 # ...
