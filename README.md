@@ -22,7 +22,7 @@ proxy servers, and world servers.
 
 
 ## Coding style
-Ident using tabs, align using spaces. In general, try to mimic the style of
+Indent using tabs, align using spaces. In general, try to mimic the style of
 existing code.
 
 The naming convention is as follows:
